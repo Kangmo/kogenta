@@ -29,7 +29,7 @@ Port performance_rnn and dependent codes to Kotlin native.
 Add support for multiple GPUs to performance_rnn.
 
 ## M3 : performance_rnn - 110 tflops
-Do performance tuning to get 100 tflops from a Titan V card during the training phase of performance_rnn.
+Do performance tuning to get 110 tflops from a Titan V card during the training phase of performance_rnn.
 
 ## M4 : The MAESTRO Dataset loader
 Write codes for loading the MAESTRO dataset in Kotlin native.
