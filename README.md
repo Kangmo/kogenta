@@ -1,8 +1,8 @@
-#Kogenta
+# Kogenta
 
-A Kotlin native port of Google Magenta.
+A Kotlin native port of Google Magenta and Wave2Midi2Wave.
 
-#Goals
+# Goals
 ## Port Google Magenta to Kotlin Native
 Port Magenta to Kotlin Native to make it run on various platforms such as:
 - iOS (arm32, arm64, emulator x86_64)
@@ -21,7 +21,7 @@ Figure out why the Python version of Magenta is running so slow during the train
 ## Measure Performance
 Measure the elapsed time during training of performance_rnn to see if we have any performance gains after porting Magenta to Kotlin Native.
 
-#Milestones
+# Milestones
 ## M1: performance_rnn - Basic
 Port performance_rnn and dependent codes to Kotlin native.
 
@@ -39,6 +39,7 @@ https://magenta.tensorflow.org/datasets/maestro
 Reproduce Wave2Midi2Wave model in the following paper.
 https://arxiv.org/abs/1810.12247
 
-#Disclaimer
+# Disclaimer
 This is a personal project to learn about TensorFlow and Magenta. 
 Not for a production usage.
+I warned you ;-).
