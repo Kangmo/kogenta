@@ -37,6 +37,8 @@ https://magenta.tensorflow.org/datasets/maestro
 
 ## M5 : Implement Wave2Midi2Wave
 Reproduce Wave2Midi2Wave model in the following paper.
+
+ENABLING FACTORIZED PIANO MUSIC MODELING AND GENERATION WITH THE MAESTRO DATASET
 https://arxiv.org/abs/1810.12247
 
 # Disclaimer
