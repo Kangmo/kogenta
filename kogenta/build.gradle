@@ -1,0 +1,51 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.3.11'
+}
+
+repositories {
+    mavenCentral()
+    //maven { url 'https://maven.fabric.io/public' }
+}
+/*
+plugins {
+    id 'kotlin-multiplatform'
+}
+*/
+
+def tensorflowHome = "c:/tools/tensorflow"
+
+// Determine host preset.
+//def hostPreset = MPPTools.defaultHostPreset(project, [kotlin.presets.mingwX64, kotlin.presets.macosX64, kotlin.presets.linuxX64])
+
+kotlin {
+    targets {
+        fromPreset(kotlin.presets.mingwX64, 'tensorflow') {
+//        fromPreset(hostPreset, 'tensorflow') {
+            compilations.main.outputKinds 'EXECUTABLE'
+            compilations.main.entryPoint 'sample.tensorflow.main'
+            
+            compilations.main.linkerOpts "-L$tensorflowHome/lib", '-ltensorflow'
+            compilations.main.cinterops {
+                tensorflow {
+                    includeDirs "$tensorflowHome/include"
+                }
+            }
+            
+        }
+    }
+}
+
+/*
+task downloadTensorflow(type: Exec) {
+    workingDir projectDir
+    commandLine './downloadTensorflow.sh'
+}
+tasks[kotlin.targets.tensorflow.compilations.main.cinterops.tensorflow.interopProcessingTaskName].dependsOn downloadTensorflow
+*/
+
+/*
+MPPTools.createRunTask(project, 'runProgram', kotlin.targets.tensorflow) {
+    environment 'LD_LIBRARY_PATH': "$tensorflowHome/lib"
+    environment 'DYLD_LIBRARY_PATH': "$tensorflowHome/lib"
+}
+*/
